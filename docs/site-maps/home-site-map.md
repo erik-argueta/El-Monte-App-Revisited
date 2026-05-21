@@ -30,3 +30,32 @@ Provides a GUI of a calendar of the month with two tabs: "Events Calendar" and "
 * Maps & Directions (Button) [https://www.ci.el-monte.ca.us/337/Maps-Directions]
 * Popular Places (Button) [https://www.ci.el-monte.ca.us/144/Find]
 * Parks (Button) [https://www.ci.el-monte.ca.us/Facilities]
+
+
+## Contact Us 
+* El Monte City Hall: 11333 Valley Boulevard El Monte, CA 91731
+* Phone: 626-580-2001
+* Fax: 626-453-3612
+* [Email](https://www.ci.el-monte.ca.us/directory.aspx)
+
+## Quick Links
+* [Municipal Code](https://library.municode.com/ca/el_monte/codes/code_of_ordinances)
+* [Job Openings](http://agency.governmentjobs.com/elmonteca/default.cfm)
+* [City Staff Email](https://outlook.office365.com/)
+* [City Services](https://www.ci.el-monte.ca.us/101/Services)
+* [City Directory](https://www.ci.el-monte.ca.us/Directory.aspx)
+
+## Frequently Asked Questions (FAQs)
+1. [Where can I register to vote?](https://www.ci.el-monte.ca.us/Faq.aspx?QID=202)
+2. [Who do I talk to regarding trash services?](https://www.ci.el-monte.ca.us/Faq.aspx?QID=203)
+3. [Where can I get information on recycling?](https://www.ci.el-monte.ca.us/Faq.aspx?QI204)
+4. [How do I apply for a vacant position?](https://www.ci.el-monte.ca.us/Faq.aspx?QID=205)
+
+## Site Links 
+* Home 
+* Site Map 
+* Contact Us 
+* Accessibility
+* Copyright Notices 
+* Privacy Policy
+* Government Websites by CivicPlus

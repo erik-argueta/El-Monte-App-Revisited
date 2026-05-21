@@ -1,4 +1,4 @@
-# El Monte Notifier (Re-Visited)
+# El Monte Notifier (Re-visited)
 
 ## Description
 A mobile app that will notify El Monte Residents of upcoming official events.  

@@ -2,6 +2,7 @@
 
 ## Description
 A mobile app that will notify El Monte Residents of upcoming official events.  
+This project is ever evolving to bridge the communities accessibility to the resources they seek.  
 
 ### Modules
 * Official Announcements
@@ -41,3 +42,15 @@ I initially decided to build the app in Flutter due to its robustness with creat
 
 # MacOS
 * xCode (for iOS mobile simulations)
+
+# TODOs
+## Scaffolding
+[] Scaffold the entire site map  
+[] Create a list of useful resources  
+[] Consider any scapers that may be needed
+
+## Application Design
+[] Make a list of modules  
+[] Draft what each page would look like  
+
+### TBA

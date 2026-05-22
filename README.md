@@ -44,6 +44,7 @@ I initially decided to build the app in Flutter due to its robustness with creat
 * xCode (for iOS mobile simulations)
 
 # TODOs
+List of tasks to do.
 ## Scaffolding
 [] Scaffold the entire site map  
 [] Create a list of useful resources  

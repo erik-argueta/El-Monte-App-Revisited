@@ -10,8 +10,10 @@ This page is dedicated to scaffolding the structure of El Monte's official websi
 5. Current Projects (Button)
 6. Agendas & Minutes (Button)
 
-### Alerts
+### Alerts (https://www.ci.el-monte.ca.us/AlertCenter.aspx?CID=4)
 "There are no alerts at this time" (May 20, 2026)
+* Offers RSS functoinality
+* Offers ["Notify Me"](https://www.ci.el-monte.ca.us/list.aspx?Mode=Subscribe#alertCenter)
 
 ### News Flash
 Portion displays fliers
@@ -22,14 +24,14 @@ Portion displays fliers
 Provides a GUI of a calendar of the month with two tabs: "Events Calendar" and "Government Calendar"
 
 ### Follow Us 
-* Link to FaceBook page [https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F117401748318909%3Fref%3Dembed_page]
-* Link to Twitter [https://twitter.com/MyElMonte?ref_src=twsrc%5Etfw]
+* [Link to FaceBook page](https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F117401748318909%3Fref%3Dembed_page)
+* [Link to Twitter](https://twitter.com/MyElMonte?ref_src=twsrc%5Etf)
 
 
 ### Maps & Directions
-* Maps & Directions (Button) [https://www.ci.el-monte.ca.us/337/Maps-Directions]
-* Popular Places (Button) [https://www.ci.el-monte.ca.us/144/Find]
-* Parks (Button) [https://www.ci.el-monte.ca.us/Facilities]
+* Maps & Directions [Button](https://www.ci.el-monte.ca.us/337/Maps-Directions)
+* Popular Places [Button](https://www.ci.el-monte.ca.us/144/Find)
+* Parks [Button](https://www.ci.el-monte.ca.us/Facilities)
 
 
 ## Contact Us 
@@ -40,7 +42,7 @@ Provides a GUI of a calendar of the month with two tabs: "Events Calendar" and "
 
 ## Quick Links
 * [Municipal Code](https://library.municode.com/ca/el_monte/codes/code_of_ordinances)
-* [Job Openings](http://agency.governmentjobs.com/elmonteca/default.cfm)
+* [Job Openings](htp://agency.governmentjobs.com/elmonteca/default.cfm)
 * [City Staff Email](https://outlook.office365.com/)
 * [City Services](https://www.ci.el-monte.ca.us/101/Services)
 * [City Directory](https://www.ci.el-monte.ca.us/Directory.aspx)

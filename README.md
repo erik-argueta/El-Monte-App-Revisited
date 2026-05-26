@@ -32,8 +32,6 @@ I initially decided to build the app in Flutter due to its robustness with creat
 ### Back-End
 * Firebase
 
----
-
 ## Resources
 * Git
 * GitHub
@@ -43,15 +41,26 @@ I initially decided to build the app in Flutter due to its robustness with creat
 # MacOS
 * xCode (for iOS mobile simulations)
 
+--- 
+
 # TODOs
 List of tasks to do.
+
+## Documentation 
+- [] SRS Documents
+    - [] UML Diagrams
+    - [] ...
 ## Scaffolding
-[] Scaffold the entire site map  
-[] Create a list of useful resources  
-[] Consider any scapers that may be needed
+- [x] Scaffold the entire site map  
+    - docs/site-maps/
+- [x] Create a list of useful resources
+    - docs/modules.md
+- [] Consider any scrapers that may be needed
+    - Use of RSS feeds to push official alerts to the application
 
 ## Application Design
-[] Make a list of modules  
-[] Draft what each page would look like  
+- [x] Make a list of modules  
+- [x] Draft what each page would look like  
 
-### TBA
+## Pressing Questions
+- [] Is there a way to confirm the hyperlinks are working appropriately?

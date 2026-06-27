@@ -5,6 +5,8 @@ import '../screens/for-residents/for_residents_screen.dart';
 import '../screens/govt-related/govt_related_screen.dart';
 import '../screens/how-do/how_do_screen.dart';
 import '../screens/business-related/business_related_screen.dart';
+import '../screens/calendar/calendar_screen.dart';
+import '../screens/profile/profile_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
@@ -48,6 +50,20 @@ final GoRouter appRouter = GoRouter(
       path: '/how-do-i',
       name: 'HowDoI',
       builder: (context, state) => const HowDoIPage()
+    ),
+
+    // Route dedicated to Calendar Page
+    GoRoute(
+      path: '/calendar',
+      name: 'calendar',
+      builder: (context, status) => CalendarPage()
+    ),
+
+    // Route dedicated to Profile page 
+    GoRoute(
+      path: '/profile',
+      name: 'profile',
+      builder: (context, status) => ProfilePage()
     ),
   ]
 );

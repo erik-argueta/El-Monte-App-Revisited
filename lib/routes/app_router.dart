@@ -8,6 +8,7 @@ import '../screens/how-do/how_do_screen.dart';
 import '../screens/business-related/business_related_screen.dart';
 import '../screens/calendar/calendar_screen.dart';
 import '../screens/profile/profile_screen.dart';
+import '../screens/services/services_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
@@ -17,60 +18,31 @@ final GoRouter appRouter = GoRouter(
         return MainShell(child: child);
       },
       routes: [
-        GoRoute(
-          path: '/',
-          name: 'home',
-          builder: (context, state) => const HomePage()
-        ),
+        GoRoute(path: '/', name: 'home', builder: (context, state) => const HomePage()),
 
         // Route dedicated to the Resources page
-        GoRoute(
-          path: '/resources',
-          name: 'resources',
-          builder: (context, state) => const ResourcesPage()
-        ),
+        GoRoute(path: '/resources', name: 'resources', builder: (context, state) => const ResourcesPage()),
 
         // Route dedicated to the For Residents page
-        GoRoute(
-          path: '/for-residents',
-          name: 'residents',
-          builder: (context, state) => const ForResidentsPage()
-        ),
+        GoRoute(path: '/for-residents', name: 'residents', builder: (context, state) => const ForResidentsPage()),
 
         // Route dedicated to Government Related page
-        GoRoute(
-          path: '/govt-related',
-          name: 'govt',
-          builder: (context, state) => const GovtRelatedPage()
-        ),
+        GoRoute(path: '/govt-related', name: 'govt', builder: (context, state) => const GovtRelatedPage()),
       
       // Route dedicated to Business Related page 
-        GoRoute(
-          path: '/business-related',
-          name: 'business',
-          builder: (context, state) => const BusinessRelatedPage()
-        ),
+        GoRoute(path: '/business-related', name: 'business', builder: (context, state) => const BusinessRelatedPage()),
         
         // Route dedicated to the How Do I page
-        GoRoute(
-          path: '/how-do-i',
-          name: 'HowDoI',
-          builder: (context, state) => const HowDoIPage()
-        ),
+        GoRoute(path: '/how-do-i', name: 'HowDoI', builder: (context, state) => const HowDoIPage()),
 
         // Route dedicated to Calendar Page
-        GoRoute(
-          path: '/calendar',
-          name: 'calendar',
-          builder: (context, status) => CalendarPage()
-        ),
+        GoRoute(path: '/calendar', name: 'calendar', builder: (context, status) => CalendarPage()),
 
         // Route dedicated to Profile page 
-        GoRoute(
-          path: '/profile',
-          name: 'profile',
-          builder: (context, status) => ProfilePage()
-        ),
+        GoRoute(path: '/profile', name: 'profile', builder: (context, status) => ProfilePage()),
+
+        // Route dedicated to Services page
+        GoRoute(path: '/services', name: 'services', builder: (context, status) => ServicePage()),
       ],
     ),    
   ]

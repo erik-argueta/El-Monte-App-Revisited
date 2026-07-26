@@ -4,6 +4,8 @@ Link: [https://www.ci.el-monte.ca.us/sitemap]
 ## City of El Monte – Site Map
 
 - [Home](https://www.ci.el-monte.ca.us/1/Home)
+
+### Government
 - [Government](https://www.ci.el-monte.ca.us/27/Government)
   - [Agendas & Minutes](https://www.ci.el-monte.ca.us/129/Agendas-Minutes)
   - [Boards & Commissions](https://www.ci.el-monte.ca.us/163/Boards-Commissions)
@@ -318,6 +320,8 @@ Link: [https://www.ci.el-monte.ca.us/sitemap]
       - [2025 Urban Water Management Plan (Public Draft)](https://www.ci.el-monte.ca.us/744/2025-Urban-Water-Management-Plan-Public-)
   - [Organization Chart](https://www.ci.el-monte.ca.us/386/Organization-Chart)
 
+
+### Services
 - [Services](https://www.ci.el-monte.ca.us/101/Services)
   - [Alerts](https://www.ci.el-monte.ca.us/130/Alerts)
   - [E-Services (ELMO)](https://www.ci.el-monte.ca.us/421/E---Services-ELMO)
@@ -339,6 +343,7 @@ Link: [https://www.ci.el-monte.ca.us/sitemap]
   - [Water Service Requests](https://www.ci.el-monte.ca.us/405/Water-Service-Requests)
   - [City Events](https://www.ci.el-monte.ca.us/735/City-Events)
 
+### Residents
 - [Residents](https://www.ci.el-monte.ca.us/31/Residents)
   - [About El Monte](https://www.ci.el-monte.ca.us/334/About-El-Monte)
   - [Animal Control](https://www.ci.el-monte.ca.us/387/Animal-Control)
@@ -362,6 +367,7 @@ Link: [https://www.ci.el-monte.ca.us/sitemap]
   - [Sharing the Heritage (PDF)](https://www.ci.el-monte.ca.us/335/Sharing-the-Heritage-PDF)
   - [Social Services](https://www.ci.el-monte.ca.us/390/Social-Services)
 
+### Business
 - [Business](https://www.ci.el-monte.ca.us/35/Business)
   - [Alarm Program](https://www.ci.el-monte.ca.us/397/Alarm-Program)
   - [Bid Opportunities](https://www.ci.el-monte.ca.us/140/Bid-Opportunities)
@@ -372,6 +378,7 @@ Link: [https://www.ci.el-monte.ca.us/sitemap]
   - [Economic Development](https://www.ci.el-monte.ca.us/414/Economic-Development)
   - [Purchasing](https://www.ci.el-monte.ca.us/415/Purchasing)
 
+### How Do I
 - [How Do I...](https://www.ci.el-monte.ca.us/9/How-Do-I)
   - [Apply For](https://www.ci.el-monte.ca.us/143/Apply-For)
     - [Alarm Permit Application (PDF)](https://www.ci.el-monte.ca.us/385/Alarm-Permit-Application-PDF)

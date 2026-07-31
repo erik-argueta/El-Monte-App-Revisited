@@ -42,6 +42,11 @@ void main() {
       find.byKey(const ValueKey('community-events-facebook')),
       findsOneWidget,
     );
+    expect(find.byType(Image), findsNWidgets(9));
+    expect(
+      find.byKey(const ValueKey('community-event-flyer-8')),
+      findsOneWidget,
+    );
 
     await tester.tap(find.byTooltip('Back'));
     await tester.pumpAndSettle();

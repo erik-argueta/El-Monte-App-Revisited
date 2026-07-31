@@ -7,6 +7,18 @@ import '../../widgets/city_page_header.dart';
 class CommunityEventsPage extends StatelessWidget {
   const CommunityEventsPage({super.key});
 
+  static const _flyerAssets = <String>[
+    'lib/assets/ig-fliers/summer-brochure.jpg',
+    'lib/assets/ig-fliers/citizenship-help.jpg',
+    'lib/assets/ig-fliers/back-to-school.jpg',
+    'lib/assets/ig-fliers/splash.jpg',
+    'lib/assets/ig-fliers/wellness-project.jpg',
+    'lib/assets/ig-fliers/cooling.jpg',
+    'lib/assets/ig-fliers/summer-brochure.jpg',
+    'lib/assets/ig-fliers/citizenship-help.jpg',
+    'lib/assets/ig-fliers/back-to-school.jpg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,11 +34,10 @@ class CommunityEventsPage extends StatelessWidget {
                   end: Alignment.bottomCenter,
                 ),
               ),
-              child: Align(
-                alignment: Alignment.topCenter,
+              child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 540),
-                  child: Padding(
+                  child: SingleChildScrollView(
                     padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -77,6 +88,23 @@ class CommunityEventsPage extends StatelessWidget {
                             ),
                           ],
                         ),
+                        const SizedBox(height: 18),
+                        GridView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          padding: const EdgeInsets.only(bottom: 20),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                mainAxisSpacing: 4,
+                                crossAxisSpacing: 4,
+                              ),
+                          itemCount: _flyerAssets.length,
+                          itemBuilder: (context, index) => _FlyerTile(
+                            key: ValueKey('community-event-flyer-$index'),
+                            assetPath: _flyerAssets[index],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -85,6 +113,27 @@ class CommunityEventsPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _FlyerTile extends StatelessWidget {
+  const _FlyerTile({required this.assetPath, super.key});
+
+  final String assetPath;
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(3),
+      child: Image.asset(
+        assetPath,
+        width: double.infinity,
+        height: double.infinity,
+        fit: BoxFit.cover,
+        cacheWidth: 600,
+        filterQuality: FilterQuality.medium,
       ),
     );
   }

@@ -38,9 +38,9 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
                     children: [
                       HomeGridButton(
-                        icon: Icons.menu_book_rounded,
-                        label: 'Resources',
-                        onTap: () => context.push('/directory'),
+                        icon: Icons.event_rounded,
+                        label: 'Community Events',
+                        onTap: () => context.push('/community-events'),
                       ),
                       HomeGridButton(
                         icon: CityLinks.howDoI.icon,
@@ -221,23 +221,20 @@ class _HomeHeader extends StatelessWidget {
 class _CityMark extends StatelessWidget {
   const _CityMark();
 
+  static const _sealAsset = 'lib/assets/Seal_of_El_Monte_California.png';
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 62,
-      height: 62,
-      decoration: BoxDecoration(
-        color: const Color(0xFFF4F1DE),
-        shape: BoxShape.circle,
-        border: Border.all(color: const Color(0xFFC8A958), width: 3),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.18), blurRadius: 4),
-        ],
-      ),
-      child: const Icon(
-        Icons.location_city_rounded,
-        color: Color(0xFF1B6570),
-        size: 34,
+    return Semantics(
+      label: 'City of El Monte seal',
+      image: true,
+      child: Image.asset(
+        _sealAsset,
+        key: const ValueKey('el-monte-seal'),
+        width: 72,
+        height: 68,
+        fit: BoxFit.contain,
+        filterQuality: FilterQuality.high,
       ),
     );
   }

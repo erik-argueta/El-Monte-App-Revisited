@@ -9,6 +9,7 @@ import '../screens/govt-related/govt_related_screen.dart';
 import '../screens/how-do/how_do_screen.dart';
 import '../screens/business-related/business_related_screen.dart';
 import '../screens/calendar/calendar_screen.dart';
+import '../screens/community_events/community_events_screen.dart';
 import '../screens/profile/profile_screen.dart';
 import '../screens/services/services_screen.dart';
 import '../screens/modules/site_map_module_screen.dart';
@@ -44,15 +45,15 @@ final GoRouter appRouter = GoRouter(
           builder: (context, state) => const HomelessnessResourcesPage(),
         ),
         GoRoute(
-          path: '/directory',
-          name: 'site-map-directory',
-          builder: (context, state) => const SiteMapModulePage(),
-        ),
-        GoRoute(
           path: '/directory/:nodeId',
           name: 'site-map-module',
           builder: (context, state) =>
-              SiteMapModulePage(nodeId: state.pathParameters['nodeId']),
+              SiteMapModulePage(nodeId: state.pathParameters['nodeId']!),
+        ),
+        GoRoute(
+          path: '/community-events',
+          name: 'community-events',
+          builder: (context, state) => const CommunityEventsPage(),
         ),
 
         // Route dedicated to the For Residents page

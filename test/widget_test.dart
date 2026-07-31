@@ -11,14 +11,40 @@ void main() {
     addTearDown(() => tester.binding.setSurfaceSize(null));
     await tester.pumpWidget(const MainApp());
 
+    expect(find.byKey(const ValueKey('el-monte-seal')), findsOneWidget);
     expect(find.text('CITY CONNECT'), findsOneWidget);
-    expect(find.text('Resources'), findsOneWidget);
+    expect(find.text('Community Events'), findsOneWidget);
     expect(find.text('How Do I...'), findsOneWidget);
     expect(find.text('For Residents'), findsOneWidget);
     expect(find.text('Business Related'), findsOneWidget);
     expect(find.text('Government Related'), findsOneWidget);
     expect(find.text('Services'), findsOneWidget);
     expect(find.text('Report'), findsOneWidget);
+  });
+
+  testWidgets('community events opens its dedicated page', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(430, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.pumpWidget(const MainApp());
+
+    await tester.tap(find.text('Community Events'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('COMMUNITY EVENTS'), findsOneWidget);
+    expect(find.text('Follow Us for Updates'), findsOneWidget);
+    expect(find.text('Instagram'), findsOneWidget);
+    expect(find.text('Facebook'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('community-events-instagram')),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const ValueKey('community-events-facebook')),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
   });
 
   testWidgets('site-map modules navigate to a browser leaf', (tester) async {

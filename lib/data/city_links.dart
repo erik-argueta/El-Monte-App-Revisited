@@ -55,6 +55,16 @@ abstract final class CityLinks {
     url: 'https://www.ci.el-monte.ca.us/130/Alerts',
     icon: Icons.notifications_rounded,
   );
+  static const instagram = CityLink(
+    label: 'Instagram',
+    url: 'https://www.instagram.com/myelmonte/',
+    icon: Icons.camera_alt_rounded,
+  );
+  static const facebook = CityLink(
+    label: 'Facebook',
+    url: 'https://www.facebook.com/CityofElMonte/',
+    icon: Icons.facebook,
+  );
   static const cityClerk = CityLink(
     label: "City Clerk's Office",
     url: 'https://www.ci.el-monte.ca.us/153/City-Clerks-Office',

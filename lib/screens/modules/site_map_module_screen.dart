@@ -6,9 +6,9 @@ import '../../utils/external_link.dart';
 import '../../widgets/city_page_header.dart';
 
 class SiteMapModulePage extends StatelessWidget {
-  const SiteMapModulePage({this.nodeId, super.key});
+  const SiteMapModulePage({required this.nodeId, super.key});
 
-  final String? nodeId;
+  final String nodeId;
 
   @override
   Widget build(BuildContext context) {
@@ -42,20 +42,9 @@ class SiteMapModulePage extends StatelessWidget {
   }
 
   Future<_ModuleContent> _loadContent() async {
-    final id = nodeId;
-    if (id == null) {
-      final roots = await SiteMapRepository.instance.loadRoots();
-      return _ModuleContent(
-        title: 'City Resources',
-        introduction:
-            'Browse every module from the official City of El Monte site map.',
-        nodes: roots,
-      );
-    }
-
-    final node = await SiteMapRepository.instance.findById(id);
+    final node = await SiteMapRepository.instance.findById(nodeId);
     if (node == null) {
-      throw StateError('Site-map module "$id" was not found.');
+      throw StateError('Site-map module "$nodeId" was not found.');
     }
 
     return _ModuleContent(

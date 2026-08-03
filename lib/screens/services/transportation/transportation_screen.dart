@@ -1,61 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../widgets/city_page_header.dart';
-import '../../widgets/site_map_button.dart';
+import '../../../utils/external_link.dart';
+import '../../../widgets/city_page_header.dart';
+import '../../../widgets/site_map_button.dart';
 
-class HowDoIPage extends StatelessWidget {
-  const HowDoIPage({super.key});
+class TransportationPage extends StatelessWidget {
+  const TransportationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final buttons = [
       SiteMapButton(
-        key: const ValueKey('site-map-143'),
-        logo: const Icon(Icons.description_rounded),
-        title: 'Apply For',
-        description: 'Browse 4 related topics for Apply For.',
-        trailingIcon: Icons.chevron_right_rounded,
-        onTap: () => context.push('/how-do/apply-for'),
+        key: const ValueKey('site-map-399'),
+        logo: const Icon(Icons.directions_bus_rounded),
+        title: 'Shuttles',
+        description:
+            'Open the official City of El Monte Shuttles page in your browser.',
+        trailingIcon: Icons.open_in_new_rounded,
+        onTap: () =>
+            openCityLink(context, 'https://www.ci.el-monte.ca.us/399/Shuttles'),
       ),
       SiteMapButton(
-        key: const ValueKey('site-map-144'),
-        logo: const Icon(Icons.description_rounded),
-        title: 'Find',
-        description: 'Browse 6 related topics for Find.',
-        trailingIcon: Icons.chevron_right_rounded,
-        onTap: () => context.push('/how-do/find'),
+        key: const ValueKey('site-map-400'),
+        logo: const Icon(Icons.directions_bus_rounded),
+        title: 'Trolleys',
+        description:
+            'Open the official City of El Monte Trolleys page in your browser.',
+        trailingIcon: Icons.open_in_new_rounded,
+        onTap: () =>
+            openCityLink(context, 'https://www.ci.el-monte.ca.us/400/Trolleys'),
       ),
       SiteMapButton(
-        key: const ValueKey('site-map-142'),
-        logo: const Icon(Icons.payments_rounded),
-        title: 'Pay',
-        description: 'Browse 6 related topics for Pay.',
-        trailingIcon: Icons.chevron_right_rounded,
-        onTap: () => context.push('/how-do/pay'),
-      ),
-      SiteMapButton(
-        key: const ValueKey('site-map-349'),
+        key: const ValueKey('site-map-641'),
         logo: const Icon(Icons.description_rounded),
-        title: 'Submit',
-        description: 'Browse 5 related topics for Submit.',
-        trailingIcon: Icons.chevron_right_rounded,
-        onTap: () => context.push('/how-do/submit'),
-      ),
-      SiteMapButton(
-        key: const ValueKey('site-map-355'),
-        logo: const Icon(Icons.description_rounded),
-        title: 'View',
-        description: 'Browse 7 related topics for View.',
-        trailingIcon: Icons.chevron_right_rounded,
-        onTap: () => context.push('/how-do/view'),
+        title: 'Title VI',
+        description:
+            'Open the official City of El Monte Title VI page in your browser.',
+        trailingIcon: Icons.open_in_new_rounded,
+        onTap: () =>
+            openCityLink(context, 'https://www.ci.el-monte.ca.us/641/Title-VI'),
       ),
     ];
 
     return Scaffold(
       body: Column(
         children: [
-          const CityPageHeader(title: 'How Do I...'),
+          const CityPageHeader(title: 'Transportation'),
           Expanded(
             child: DecoratedBox(
               decoration: const BoxDecoration(
@@ -78,7 +68,7 @@ class HowDoIPage extends StatelessWidget {
                         return const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 3),
                           child: Text(
-                            'Choose a How Do I... topic to continue.',
+                            'Choose a Transportation topic to continue.',
                             style: TextStyle(
                               color: Color(0xFF415054),
                               fontSize: 14,

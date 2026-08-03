@@ -155,13 +155,116 @@ void main() {
     await tester.pumpAndSettle();
   });
 
-  testWidgets('site-map modules navigate to a browser leaf', (tester) async {
+  testWidgets('how do I opens its editable subsection screens', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(430, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.pumpWidget(const MainApp());
+
+    await tester.tap(find.text('How Do I...'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('HOW DO I...'), findsOneWidget);
+    expect(find.text('Apply For'), findsOneWidget);
+    expect(find.text('Find'), findsOneWidget);
+    expect(find.text('Pay'), findsOneWidget);
+    expect(find.text('Submit'), findsOneWidget);
+    expect(find.text('View'), findsOneWidget);
+
+    await tester.tap(find.text('Apply For'));
+    await tester.pumpAndSettle();
+    expect(find.text('APPLY FOR'), findsOneWidget);
+    expect(find.text('Alarm Permit Application (PDF)'), findsOneWidget);
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Find'));
+    await tester.pumpAndSettle();
+    expect(find.text('FIND'), findsOneWidget);
+    expect(find.text('Car Dealerships'), findsOneWidget);
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Pay'));
+    await tester.pumpAndSettle();
+    expect(find.text('PAY'), findsOneWidget);
+    expect(find.text('Administrative Citations'), findsOneWidget);
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Submit'));
+    await tester.pumpAndSettle();
+    expect(find.text('SUBMIT'), findsOneWidget);
+    expect(find.text('Building Inspection'), findsOneWidget);
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('View'));
+    await tester.pumpAndSettle();
+    expect(find.text('VIEW'), findsOneWidget);
+    expect(find.text('Agendas'), findsOneWidget);
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('for residents opens its editable dedicated page', (
+    tester,
+  ) async {
+    await tester.binding.setSurfaceSize(const Size(430, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.pumpWidget(const MainApp());
+
+    await tester.tap(find.text('For Residents'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('RESIDENTS'), findsOneWidget);
+    expect(find.text('About El Monte'), findsOneWidget);
+    expect(find.text('Animal Control'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Social Services'),
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    expect(find.text('Social Services'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('business opens its editable dedicated page', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(430, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.pumpWidget(const MainApp());
+
+    await tester.tap(find.text('Business Related'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('BUSINESS'), findsOneWidget);
+    expect(find.text('Alarm Program'), findsOneWidget);
+    expect(find.text('Bid Opportunities'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Purchasing'),
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    expect(find.text('Purchasing'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('services opens its editable transportation screen', (
+    tester,
+  ) async {
     await tester.binding.setSurfaceSize(const Size(430, 900));
     addTearDown(() => tester.binding.setSurfaceSize(null));
     await tester.pumpWidget(const MainApp());
 
     await tester.tap(find.text('Services'));
     await tester.pumpAndSettle();
+    expect(find.text('SERVICES'), findsOneWidget);
     expect(find.text('Alerts'), findsOneWidget);
 
     await tester.scrollUntilVisible(
@@ -172,6 +275,7 @@ void main() {
     await tester.tap(find.text('Transportation'));
     await tester.pumpAndSettle();
 
+    expect(find.text('TRANSPORTATION'), findsOneWidget);
     expect(find.text('Shuttles'), findsOneWidget);
     expect(find.byKey(const ValueKey('site-map-399')), findsOneWidget);
     expect(

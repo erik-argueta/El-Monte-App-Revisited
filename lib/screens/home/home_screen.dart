@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                         logo: Icon(CityLinks.howDoI.icon),
                         title: CityLinks.howDoI.label,
                         description: CityLinks.howDoI.description,
-                        onTap: () => context.push('/directory/9'),
+                        onTap: () => context.push('/how-do'),
                       ),
                       HomeGridButton(
                         logo: Icon(
@@ -56,13 +56,13 @@ class HomePage extends StatelessWidget {
                         ),
                         title: CityLinks.residents.label,
                         description: CityLinks.residents.description,
-                        onTap: () => context.push('/directory/31'),
+                        onTap: () => context.push('/for-residents'),
                       ),
                       HomeGridButton(
                         logo: Icon(CityLinks.business.icon),
                         title: CityLinks.business.label,
                         description: CityLinks.business.description,
-                        onTap: () => context.push('/directory/35'),
+                        onTap: () => context.push('/business-related'),
                       ),
                       HomeGridButton(
                         logo: Icon(CityLinks.government.icon),
@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
                         ),
                         title: CityLinks.services.label,
                         description: CityLinks.services.description,
-                        onTap: () => context.push('/directory/101'),
+                        onTap: () => context.push('/services'),
                       ),
                     ],
                   ),

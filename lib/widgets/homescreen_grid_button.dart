@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class HomeGridButton extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final Color iconColor;
-  final VoidCallback onTap; // a function with no return value, called on tap
-
   const HomeGridButton({
-    required this.icon,
-    required this.label,
+    required this.logo,
+    required this.title,
+    required this.description,
     required this.onTap,
-    this.iconColor = const Color(0xFF1C6570),
     super.key,
   });
+
+  final Widget logo;
+  final String title;
+  final String description;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,13 @@ class HomeGridButton extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, size: 52, color: iconColor),
+              IconTheme.merge(
+                data: const IconThemeData(size: 52, color: Color(0xFF1C6570)),
+                child: logo,
+              ),
               const SizedBox(height: 10),
               Text(
-                label,
+                title,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 style: const TextStyle(
@@ -43,6 +46,20 @@ class HomeGridButton extends StatelessWidget {
                   height: 1.12,
                 ),
               ),
+              if (description.isNotEmpty) ...[
+                const SizedBox(height: 4),
+                Text(
+                  description,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Color(0xFF2F383A),
+                    fontSize: 13,
+                    height: 1.18,
+                  ),
+                ),
+              ],
             ],
           ),
         ),

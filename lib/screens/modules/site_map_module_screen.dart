@@ -4,16 +4,38 @@ import 'package:go_router/go_router.dart';
 import '../../data/site_map.dart';
 import '../../utils/external_link.dart';
 import '../../widgets/city_page_header.dart';
+import '../../widgets/site_map_button.dart';
 
-class SiteMapModulePage extends StatelessWidget {
+class SiteMapModulePage extends StatefulWidget {
   const SiteMapModulePage({required this.nodeId, super.key});
 
   final String nodeId;
 
   @override
+  State<SiteMapModulePage> createState() => _SiteMapModulePageState();
+}
+
+class _SiteMapModulePageState extends State<SiteMapModulePage> {
+  late Future<_ModuleContent> _content;
+
+  @override
+  void initState() {
+    super.initState();
+    _content = _loadContent();
+  }
+
+  @override
+  void didUpdateWidget(covariant SiteMapModulePage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.nodeId != widget.nodeId) {
+      _content = _loadContent();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder<_ModuleContent>(
-      future: _loadContent(),
+      future: _content,
       builder: (context, snapshot) {
         final content = snapshot.data;
         final title = content?.title ?? 'City Resources';
@@ -42,9 +64,9 @@ class SiteMapModulePage extends StatelessWidget {
   }
 
   Future<_ModuleContent> _loadContent() async {
-    final node = await SiteMapRepository.instance.findById(nodeId);
+    final node = await SiteMapRepository.instance.findById(widget.nodeId);
     if (node == null) {
-      throw StateError('Site-map module "$nodeId" was not found.');
+      throw StateError('Site-map module "${widget.nodeId}" was not found.');
     }
 
     return _ModuleContent(
@@ -120,8 +142,14 @@ class SiteMapModulePage extends StatelessWidget {
             }
 
             final node = content.nodes[index - 1];
-            return _SiteMapButton(
-              node: node,
+            return SiteMapButton(
+              key: ValueKey('site-map-${node.id}'),
+              logo: Icon(_iconFor(node.title)),
+              title: node.title,
+              description: node.description,
+              trailingIcon: node.hasChildren
+                  ? Icons.chevron_right_rounded
+                  : Icons.open_in_new_rounded,
               onTap: () => _openNode(context, node),
             );
           },
@@ -140,95 +168,6 @@ class SiteMapModulePage extends StatelessWidget {
     if (url != null) {
       openCityLink(context, url);
     }
-  }
-}
-
-class _ModuleContent {
-  const _ModuleContent({
-    required this.title,
-    required this.introduction,
-    required this.nodes,
-  });
-
-  final String title;
-  final String introduction;
-  final List<SiteMapNode> nodes;
-}
-
-class _SiteMapButton extends StatelessWidget {
-  const _SiteMapButton({required this.node, required this.onTap});
-
-  final SiteMapNode node;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
-      color: Colors.white,
-      elevation: 2,
-      shadowColor: Colors.black.withValues(alpha: 0.18),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: InkWell(
-        key: ValueKey('site-map-${node.id}'),
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(10),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(12, 12, 10, 12),
-          child: Row(
-            children: [
-              Container(
-                width: 48,
-                height: 48,
-                decoration: const BoxDecoration(
-                  color: Color(0xFFE3F0EF),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  _iconFor(node.title),
-                  color: const Color(0xFF246872),
-                  size: 28,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      node.title,
-                      style: const TextStyle(
-                        color: Color(0xFF111617),
-                        fontSize: 16,
-                        height: 1.15,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      node.description,
-                      style: const TextStyle(
-                        color: Color(0xFF4B575A),
-                        fontSize: 13,
-                        height: 1.25,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 6),
-              Icon(
-                node.hasChildren
-                    ? Icons.chevron_right_rounded
-                    : Icons.open_in_new_rounded,
-                color: const Color(0xFF7E898B),
-                size: 25,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 
   IconData _iconFor(String title) {
@@ -276,4 +215,16 @@ class _SiteMapButton extends StatelessWidget {
     if (normalized.contains('service')) return Icons.handyman_rounded;
     return Icons.description_rounded;
   }
+}
+
+class _ModuleContent {
+  const _ModuleContent({
+    required this.title,
+    required this.introduction,
+    required this.nodes,
+  });
+
+  final String title;
+  final String introduction;
+  final List<SiteMapNode> nodes;
 }

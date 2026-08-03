@@ -5,6 +5,9 @@ import '../screens/resources/resources_screen.dart';
 import '../screens/resources/housing_resources_screen.dart';
 import '../screens/resources/homelessness_resources_screen.dart';
 import '../screens/for-residents/for_residents_screen.dart';
+import '../screens/govt-related/boards-and-commissions/boards_and_commissions_screen.dart';
+import '../screens/govt-related/city-council/city_council_screen.dart';
+import '../screens/govt-related/departments/departments_screen.dart';
 import '../screens/govt-related/govt_related_screen.dart';
 import '../screens/how-do/how_do_screen.dart';
 import '../screens/business-related/business_related_screen.dart';
@@ -68,6 +71,21 @@ final GoRouter appRouter = GoRouter(
           path: '/govt-related',
           name: 'govt',
           builder: (context, state) => const GovtRelatedPage(),
+        ),
+        GoRoute(
+          path: '/govt-related/boards-and-commissions',
+          name: 'boards-and-commissions',
+          builder: (context, state) => const BoardsAndCommissionsPage(),
+        ),
+        GoRoute(
+          path: '/govt-related/city-council',
+          name: 'city-council',
+          builder: (context, state) => const CityCouncilPage(),
+        ),
+        GoRoute(
+          path: '/govt-related/departments',
+          name: 'departments',
+          builder: (context, state) => const DepartmentsPage(),
         ),
 
         // Route dedicated to Business Related page

@@ -2,10 +2,55 @@ import 'dart:io';
 
 import 'package:el_monte/app.dart';
 import 'package:el_monte/data/site_map.dart';
+import 'package:el_monte/widgets/homescreen_grid_button.dart';
+import 'package:el_monte/widgets/site_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  testWidgets('home grid button accepts logo, title, and description', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: HomeGridButton(
+            logo: const Icon(Icons.place_rounded),
+            title: 'Button title',
+            description: 'Button description',
+            onTap: () {},
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byIcon(Icons.place_rounded), findsOneWidget);
+    expect(find.text('Button title'), findsOneWidget);
+    expect(find.text('Button description'), findsOneWidget);
+  });
+
+  testWidgets('site map button accepts logo, title, and description', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: SiteMapButton(
+            logo: const Icon(Icons.account_balance_rounded),
+            title: 'Button title',
+            description: 'Button description',
+            trailingIcon: Icons.chevron_right_rounded,
+            onTap: () {},
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byIcon(Icons.account_balance_rounded), findsOneWidget);
+    expect(find.text('Button title'), findsOneWidget);
+    expect(find.text('Button description'), findsOneWidget);
+  });
+
   testWidgets('home displays the City Connect navigation', (tester) async {
     await tester.binding.setSurfaceSize(const Size(430, 900));
     addTearDown(() => tester.binding.setSurfaceSize(null));
@@ -43,6 +88,69 @@ void main() {
       findsOneWidget,
     );
 
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('government opens its editable dedicated page', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(430, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.pumpWidget(const MainApp());
+
+    await tester.tap(find.text('Government Related'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('GOVERNMENT'), findsOneWidget);
+    expect(find.text('Agendas & Minutes'), findsOneWidget);
+    expect(find.text('Boards & Commissions'), findsOneWidget);
+    expect(find.text('City Council'), findsOneWidget);
+    expect(find.text('Departments'), findsOneWidget);
+    expect(find.text('Organization Chart'), findsOneWidget);
+    expect(find.byType(SiteMapButton), findsNWidgets(5));
+
+    await tester.tap(find.text('Boards & Commissions'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('BOARDS & COMMISSIONS'), findsOneWidget);
+    expect(
+      find.text('Arts In Public Places Advisory Committee'),
+      findsOneWidget,
+    );
+    expect(find.text('Community Services Commission'), findsOneWidget);
+    expect(find.text('Zoning Review Committee'), findsOneWidget);
+    expect(find.text('Planning Commission'), findsOneWidget);
+    expect(find.text('Permit Committee'), findsOneWidget);
+    expect(find.byType(SiteMapButton), findsNWidgets(5));
+
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('City Council'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('CITY COUNCIL'), findsOneWidget);
+    expect(find.text('Jessica Ancona'), findsOneWidget);
+    expect(find.text('Viviana Longoria'), findsOneWidget);
+    expect(find.text('Marisol Cortez'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Departments'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('DEPARTMENTS'), findsOneWidget);
+    expect(find.text("City Clerk's Office"), findsOneWidget);
+    expect(find.text("City Manager's Office"), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Water Department'),
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    expect(find.text('Water Department'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Back'));
+    await tester.pumpAndSettle();
     await tester.tap(find.byTooltip('Back'));
     await tester.pumpAndSettle();
   });

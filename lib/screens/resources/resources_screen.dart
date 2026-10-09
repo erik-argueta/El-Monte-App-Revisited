@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../data/city_links.dart';
 import '../../utils/external_link.dart';
 import '../../widgets/city_page_header.dart';
-import '../../widgets/resource_link_card.dart';
+import '../../widgets/site_map_button.dart';
 
 class ResourcesPage extends StatelessWidget {
   const ResourcesPage({super.key});
@@ -13,23 +13,41 @@ class ResourcesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final items = [
       (
+        id: '153',
         link: CityLinks.cityClerk,
+        description:
+            "Open the official City of El Monte City Clerk's Office page in your browser.",
+        trailingIcon: Icons.open_in_new_rounded,
         onTap: () => openCityLink(context, CityLinks.cityClerk.url),
       ),
       (
+        id: '150',
         link: CityLinks.cityManager,
+        description:
+            "Open the official City of El Monte City Manager's Office page in your browser.",
+        trailingIcon: Icons.open_in_new_rounded,
         onTap: () => openCityLink(context, CityLinks.cityManager.url),
       ),
       (
+        id: '240',
         link: CityLinks.housingResources,
+        description: 'Browse housing information and assistance resources.',
+        trailingIcon: Icons.chevron_right_rounded,
         onTap: () => context.push('/resources/housing'),
       ),
       (
+        id: '246',
         link: CityLinks.federalGrantPrograms,
+        description: CityLinks.federalGrantPrograms.description,
+        trailingIcon: Icons.open_in_new_rounded,
         onTap: () => openCityLink(context, CityLinks.federalGrantPrograms.url),
       ),
       (
+        id: '130',
         link: CityLinks.alerts,
+        description:
+            'Open the official City of El Monte Alerts page in your browser.',
+        trailingIcon: Icons.open_in_new_rounded,
         onTap: () => openCityLink(context, CityLinks.alerts.url),
       ),
     ];
@@ -44,10 +62,17 @@ class ResourcesPage extends StatelessWidget {
                 padding: const EdgeInsets.all(14),
                 itemCount: items.length,
                 separatorBuilder: (_, _) => const SizedBox(height: 12),
-                itemBuilder: (context, index) => ResourceLinkCard(
-                  link: items[index].link,
-                  onTap: items[index].onTap,
-                ),
+                itemBuilder: (context, index) {
+                  final item = items[index];
+                  return SiteMapButton(
+                    key: ValueKey('site-map-${item.id}'),
+                    logo: Icon(item.link.icon),
+                    title: item.link.label,
+                    description: item.description,
+                    trailingIcon: item.trailingIcon,
+                    onTap: item.onTap,
+                  );
+                },
               ),
             ),
           ),

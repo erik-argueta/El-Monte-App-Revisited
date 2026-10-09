@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../data/city_links.dart';
 import '../../utils/external_link.dart';
 import '../../widgets/city_page_header.dart';
-import '../../widgets/resource_link_card.dart';
+import '../../widgets/site_map_button.dart';
 
 class HousingResourcesPage extends StatelessWidget {
   const HousingResourcesPage({super.key});
@@ -30,27 +30,36 @@ class HousingResourcesPage extends StatelessWidget {
                   child: ListView(
                     padding: const EdgeInsets.all(14),
                     children: [
-                      ResourceLinkCard(
-                        link: CityLinks.housingInformation,
-                        showDescription: true,
+                      SiteMapButton(
+                        key: const ValueKey('site-map-388'),
+                        logo: const Icon(Icons.apartment_rounded),
+                        title: CityLinks.housingInformation.label,
+                        description: CityLinks.housingInformation.description,
+                        trailingIcon: Icons.open_in_new_rounded,
                         onTap: () => openCityLink(
                           context,
                           CityLinks.housingInformation.url,
                         ),
                       ),
                       const SizedBox(height: 12),
-                      ResourceLinkCard(
-                        link: CityLinks.federalGrantPrograms,
-                        showDescription: true,
+                      SiteMapButton(
+                        key: const ValueKey('site-map-246'),
+                        logo: const Icon(Icons.receipt_long_rounded),
+                        title: CityLinks.federalGrantPrograms.label,
+                        description: CityLinks.federalGrantPrograms.description,
+                        trailingIcon: Icons.open_in_new_rounded,
                         onTap: () => openCityLink(
                           context,
                           CityLinks.federalGrantPrograms.url,
                         ),
                       ),
                       const SizedBox(height: 12),
-                      ResourceLinkCard(
-                        link: CityLinks.homelessness,
-                        showDescription: true,
+                      SiteMapButton(
+                        key: const ValueKey('site-map-546'),
+                        logo: const Icon(Icons.volunteer_activism_rounded),
+                        title: CityLinks.homelessness.label,
+                        description: CityLinks.homelessness.description,
+                        trailingIcon: Icons.chevron_right_rounded,
                         onTap: () =>
                             context.push('/resources/housing/homelessness'),
                       ),

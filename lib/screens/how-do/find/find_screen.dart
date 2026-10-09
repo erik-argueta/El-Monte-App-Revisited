@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/external_link.dart';
 import '../../../widgets/site_map_button.dart';
-import '../how_do_section.dart';
+import '../how_do_screen.dart';
 
 class FindPage extends StatelessWidget {
   const FindPage({super.key});

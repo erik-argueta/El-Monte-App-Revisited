@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "288861162524",
+    "project_id": "el-monte-app-9e166",
+    "storage_bucket": "el-monte-app-9e166.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288861162524:android:ed8fe4b05a6246f2b563d9",
+        "android_client_info": {
+          "package_name": "com.example.el_monte"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM2XFpw5VrX-hXnMizT6BytbaH0Ge7ay4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

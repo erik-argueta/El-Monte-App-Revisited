@@ -28,9 +28,6 @@ I initially decided to build the app in Flutter due to its robustness with creat
     * Swift
     * Kotlin
 
-### Back-End
-* Firebase
-
 ## Resources
 * Git
 * GitHub
@@ -60,4 +57,4 @@ List of tasks to do.
 # Page Specific TODOs
 Below are a list of page-specific projects and what needs to be done
 ## Community Events
-- [] Follow `docs/mockups/Community-Events/1.event-details-1.png` 
+- [] Follow `docs/mockups/Community-Events/1.event-details-1.png`
